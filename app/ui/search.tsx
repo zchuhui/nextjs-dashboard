@@ -12,9 +12,11 @@ export default function Search({ placeholder }: { placeholder: string }) {
 
   // useDebouncedCallback 用于搜索防抖，时间定位 300 ms
   const handleSearch = useDebouncedCallback((term: string) => {
+
     // 获取输入参数
-    const params = new URLSearchParams(searchParams);
+    const params:any = new URLSearchParams(searchParams);
     params.set('page', '1');
+
     if(params){
       params.set('query',term);
     }else{
